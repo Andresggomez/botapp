@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div>
+
+    <form method="post" action="">
+        {% csrf_token %}
+
+        <div style="width: 45%; margin: auto;">
+        {{form|crispy}}
+
+        <button type="submit" class="btn btn-success">Nuevo Usuario</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div>
+
+        {% if "valido" in request.GET %}
+
+            <p style="color: white; margin: 20px auto">Registro exitoso, gracias por usuar boty</p>
+
+        {% endif %}
+
+        <form action="" method="POST" style="text-align: center;">
+            {% csrf_token %}
+            <table style="color: white; margin: 20px auto">{{formulario}}</table>
+            <input type="submit" value="Enviar" style="width: 130px;">
+
+        </form>
+    </div>
+
+
+{{request.POST}}
+{% endblock %}

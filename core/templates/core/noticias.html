@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    {% for noticia in Noticia %}
+
+<div><p style="white;">
+    <h2>{{noticia.titulo}}</h2>
+    <p>{{noticia.contenido}}</p>
+    <p>{{noticia.created}}</p>
+    <p><img src="{{noticia.imagen.url}}"></p>
+    </div>
+
+    {% endfor %}
+
+{% endblock %}
