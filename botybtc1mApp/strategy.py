@@ -1,6 +1,6 @@
 #strategy.py
 import pandas as pd
-from talib import EMA, RSI, MACD
+#from talib import EMA, RSI, MACD
 import pandas_ta as ta
 import matplotlib.pyplot as plt
 
@@ -19,28 +19,16 @@ class Indicadores:
 
 
     def ema(self, timeperiod: int):
-        return EMA(
-            self.close,
-            timeperiod=timeperiod
-        ).iloc[-1]
+        return 0
 
     def emaplot(self, timeperiod: int):
-        return EMA(
-            self.close,
-            timeperiod=timeperiod
-        )
+        return 0
 
     def rsi(self, timeperiod: int):
-        return RSI(
-            self.close,
-            timeperiod=timeperiod
-        ).iloc[-1]
+        return 0
 
     def rsiplot(self, timeperiod: int):
-        return RSI(
-            self.close,
-            timeperiod=timeperiod
-        )
+        return 0
 
     def adx(self):
         return ta.adx(self.high, self.low, self.close)['ADX_14']
@@ -57,6 +45,6 @@ class Indicadores:
 
         df = pd.concat([trades, precio, volumen, ema200, ema50, ema20, rsi], axis=1)
 
-        df.to_csv('media/data.csv')
+        df.to_csv('data.csv')
 
         return df
