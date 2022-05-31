@@ -41,3 +41,4 @@ Twisted==21.2.0
 txaio==22.2.1
 unicorn==1.0.3
 whitenoise==6.1.0
+psycopg2==2.9.1
