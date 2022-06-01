@@ -144,7 +144,7 @@ STATIC_TMP = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 #Config CORS
-AUTH_USER_MODEL = 'users.User'
+#AUTH_USER_MODEL = 'users.User'
 JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
