@@ -16,15 +16,12 @@ urlpatterns = [
     path('entrar/', include('freemiumApp.urls')),
     path('datosbtc1d/', include('botybtc1mApp.urls')),
     path('cripto/', include('criptoApp.urls')),
-
     path('carro/', include('carro.urls')),
-
     path('contacto/', views.contacto, name="Contacto"),
     path('noticias/', views.noticias, name="Noticias"),
     path('registro/', views.registro, name="Registro"),
     path('servicios/', views.servicios, name="Servicios"),
 
-
-]
+] + static(settings.STATIC_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
