@@ -1,4 +1,6 @@
+web: gunicorn botapp.wsgi
+
 release: python manage.py makemigrations --no-input
 release: python manage.py migrate --no-input
 
-web: gunicorn botapp.wsgi
+
