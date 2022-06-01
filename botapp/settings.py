@@ -10,8 +10,6 @@ https://boty github aqui
 
 from pathlib import Path
 import os
-
-
 from django.contrib.messages import constants as mensajesError
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -66,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'botapp.urls'
