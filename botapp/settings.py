@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u8@!bt1^lt^(4kre4l_@oige@j$_mcorfvahva^)iiu059coy!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['botyvalyout.herokuapp.com']
+ALLOWED_HOSTS = ['botyvalyout.herokuapp.com','127.0.0.1']
 
 # Application definition
 
@@ -193,6 +193,12 @@ bot_chatID = '993513446'
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
 
 
 

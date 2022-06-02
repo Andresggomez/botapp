@@ -1,19 +1,21 @@
 from django.shortcuts import render, redirect, HttpResponse
-
 from noticiaApp.models import Noticia
 from usuariosApp.forms import formularioUsuario
-
-# de registro
 from django.core.mail import EmailMessage
-
-# Create your views here.
 from carro.carro import Carro
 
+# Create your views here.
 
 def inicio(request):
 
     carro = Carro(request)
     return render(request, "core/home.html")
+
+def boty(request):
+    return render(request, "core/boty.html")
+
+def activos(request):
+    return render(request, "core/activos.html")
 
 def noticias(request):
     consultadb = Noticia.objects.all()
@@ -52,8 +54,6 @@ def registro(request):
 
     return render(request, "core/registro.html", {'formulario':form_usuario})
 
-def servicios(request):
-    return render(request, "core/servicios.html")
 
 
 
